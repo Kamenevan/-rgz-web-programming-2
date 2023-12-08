@@ -138,14 +138,14 @@ def get_list_view_html(product):
     output = ""
     image_url = url_for("static", filename=product["img"])
     shirt_url = url_for("shirt", product_id=product["id"])
-    output = output + "<li>"
-    output = output + '<a href="' + shirt_url + '">'
+    output += "<li>"
+    output += '<a href="' + shirt_url + '">'
     output = (
         output + '<img src="' + image_url +
         '" al  t="' + product["name"] + '">')
-    output = output + "<p>View Details</p>"
-    output = output + "</a>"
-    output = output + "</li>"
+    output += "<p>View Details</p>"
+    output += "</a>"
+    output += "</li>"
 
     return output
 
@@ -173,14 +173,14 @@ def get_list_view_html_cart(product):
     output = ""
     image_url = url_for("static", filename=product["img"])
     shirt_url = url_for("shirt", product_id=product["id"])
-    output = output + "<li>"
-    output = output + '<a href="' + shirt_url + '">'
+    output += "<li>"
+    output += '<a href="' + shirt_url + '">'
     output = (
         output + '<img src="' + image_url +
         '" al  t="' + product["name"] + '">')
-    output = output + "<p>" + str(product["bought"] * product["price"]) + "$ for " + str(product["bought"]) + " shirt(s)</p>"
-    output = output + "</a>"
-    output = output + "</li>"
+    output += "<p>" + str(product["bought"] * product["price"]) + "$ for " + str(product["bought"]) + " shirt(s)</p>"
+    output += "</a>"
+    output += "</li>"
 
     return output
 
