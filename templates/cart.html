@@ -1,13 +1,32 @@
 {% extends "layout.html" %}
+
 {% block body %}
-    <div class="section furniture page">
-        <div class="wrapper">
 
-            <h1>Cart</h1>
-
-            <ul class="products">
-                    {{ product_data }}
-            </ul>
-        </div>
+  <div class="section furniture1 page">
+    <div class="wrapper">
+      <h1>Корзина</h1>
+      <ul class="products">
+        {{ product_data }}
+      </ul>
+      <p id="total_cost">Общая стоимость: {{ total_cost }} $</p>
+      <!-- <button onclick="calculateTotal()">Посчитать сумму</button> -->
+      <a href="/payment"><button>Оплатить</button></a>
     </div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      fetch('/sum')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('total_cost').innerHTML = 'Общая стоимость: ' + data.total_cost + '$';
+        });
+    }
+  </script>
+
 {% endblock %}
+
+{% block head %}
+  <title>Корзина</title>
+{% endblock %}
+

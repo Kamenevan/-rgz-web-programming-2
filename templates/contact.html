@@ -4,10 +4,10 @@
 
         <div class="wrapper">
 
-            <h1>Contact</h1>
+            <h1>Авторизация</h1>
 
 
-            <p>I&rsquo;d love to hear from you! Complete the form to send me an email.</p>
+            <p>Зарегистрируйся, чтобы совершить покупку</p>
 
             <form method="post" action="{{ url_for("send") }}">
 
@@ -22,22 +22,14 @@
                     </tr>
                     <tr>
                         <th>
-                            <label for="email">Email</label>
+                            <label for="email">Password</label>
                         </th>
                         <td>
                             <input type="text" name="email" id="email">
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            <label for="message">Message</label>
-                        </th>
-                        <td>
-                            <textarea name="message" id="message"></textarea>
-                        </td>
-                    </tr>
                 </table>
-                <input type="submit" value="Send">
+                <button type="submit" class="button_user">Зарегистрироваться</button>
 
             </form>
 
@@ -45,3 +37,34 @@
 
     </div>
 {% endblock %}
+
+
+
+
+
+
+
+#регистрация
+<!-- {% block main%}
+    <div class="logreg">
+        <h1>Регистрация</h1>
+        <div>
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+        <form action="" method="POST">
+            <div>
+                <label for="username">Пользователь:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="button_user">Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock %} -->
+
